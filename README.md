@@ -24,7 +24,7 @@ Dự án này hiện thực một **bộ tăng tốc phần cứng** để thự
 > **Y = A × X**
 
 <p align="center">
-  <img src="Hinh/Matrix_Vector.png" alt="Mô tả nhân ma trận vector" width="600"/>
+  <img src="Hinh/Matrix_Vector.png" alt="Mô tả nhân ma trận vector" width="500"/>
 </p>
 
 trong đó:
@@ -48,7 +48,7 @@ Bài học được thiết kế cho những người mới bắt đầu với p
 ### A. Giới thiệu về PIO và DMA:
 
 <p align="center">
-  <img src="Hinh/PIO_DMA_1.png" alt="PIO_DMA_1" width="600"/>
+  <img src="Hinh/PIO_DMA_1.png" alt="PIO_DMA_1" width="500"/>
 </p>
 
 ### B. Giới thiệu về PIO và DMA:
