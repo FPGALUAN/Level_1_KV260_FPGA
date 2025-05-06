@@ -2,9 +2,9 @@ For [README english](https://github.com/FPGALUAN/Level_0_KV260_FPGA/blob/main/RE
 
 For [README japanese](https://github.com/FPGALUAN/Level_0_KV260_FPGA/blob/main/README-jp.md)
 
-# 🎓 Thiết Kế Phần Cứng và Hệ Thống SoC trên FPGA – Level 0 (Kria KV260)
+# 🎓 Thiết Kế Phần Cứng và Hệ Thống SoC trên FPGA – Level 1 (Kria KV260)
 
-Chào mừng bạn đến với **Level 0** trong series **Thiết kế phần cứng và hệ thống SoC trên FPGA**.  
+Chào mừng bạn đến với **Level 1** trong series **Thiết kế phần cứng và hệ thống SoC trên FPGA**.  
 Repository này chứa toàn bộ tài liệu, mã nguồn và hướng dẫn liên quan đến việc hiện thực một mô-đun phần cứng đơn giản và tích hợp vào hệ thống SoC trên bo mạch **Xilinx Kria KV260**.
 
 ---
@@ -12,9 +12,9 @@ Repository này chứa toàn bộ tài liệu, mã nguồn và hướng dẫn li
 
 Các bước sẽ được trình bày chi tiết trong video hướng dẫn tương ứng bên dưới, vui lòng bấm vào video bên dưới để xem chi tiết từng bước 👇👇👇.  
  
-[![Xem video demo](https://img.youtube.com/vi/F1vxzkd7_DI/0.jpg)](https://www.youtube.com/watch?v=F1vxzkd7_DI)
+[![Xem video demo](https://img.youtube.com/vi/iHpeTRM6k9U/0.jpg)](https://www.youtube.com/watch?v=iHpeTRM6k9U)
 
-Hoặc truy cập link: https://youtu.be/F1vxzkd7_DI?si=RyHPx3zzii_RXPgk
+Hoặc truy cập link: https://youtu.be/iHpeTRM6k9U 
 ---
 
 ## I. Yêu cầu thuật toán
