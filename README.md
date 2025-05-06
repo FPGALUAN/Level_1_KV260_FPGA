@@ -69,7 +69,15 @@ Hình trên minh họa quá trình truyền dữ liệu được khởi tạo tr
 
 Hình trên mô tả truyền dữ liệu từ DRAM đến IP thiết kế thông qua phương pháp truyền DMA. Dữ liệu được lưu trữ trong các tệp trên thẻ nhớ SD và sau đó được đọc vào bộ nhớ DRAM thông qua các lệnh truy xuất tiêu chuẩn như open("file"). Sau khi dữ liệu đã có mặt trong DRAM, quá trình truyền dữ liệu từ DRAM đến MY_IP được thực hiện thông qua DMA, giúp giảm tải cho CPU và tối ưu hóa băng thông. Quá trình này không yêu cầu sự can thiệp của CPU và đảm bảo hiệu suất truyền tải dữ liệu nhanh chóng và hiệu quả giữa bộ nhớ và các IP xử lý.
 
-### B. Giới thiệu về PIO và DMA:
+### B. Giới thiệu về BRAM:
+
+Bộ nhớ Block RAM (BRAM) là một thành phần quan trọng trong FPGA, cung cấp khả năng lưu trữ dữ liệu trực tiếp trên chip với độ trễ thấp và băng thông cao. BRAM có kích thước lớn hơn so với LUTRAM (RAM tạo thành từ các LUT), vì vậy nó thường được sử dụng để lưu trữ các khối dữ liệu lớn hơn, hỗ trợ các ứng dụng đòi hỏi dung lượng bộ nhớ cao hơn. Được cấu trúc dưới dạng các khối bộ nhớ riêng biệt và độc lập, BRAM cho phép thiết kế linh hoạt trong việc lưu trữ và truy xuất dữ liệu, đặc biệt hữu ích cho các ứng dụng cần tốc độ xử lý cao như xử lý tín hiệu số, điều khiển hệ thống, và xử lý dữ liệu trong các hệ thống SoC. Trong thiết kế IP, BRAM thường được sử dụng như bộ nhớ toàn cục (global memory) để lưu trữ các dữ liệu lớn cần được truy cập bởi nhiều thành phần xử lý khác nhau, hoặc như bộ nhớ cục bộ (local memory) để lưu trữ dữ liệu tạm thời và trạng thái trong các lõi xử lý cụ thể. Sự đa dụng này giúp BRAM trở thành một lựa chọn phổ biến trong các thiết kế FPGA phức tạp.
+
+<p align="center">
+  <img src="Hinh/PIO_BRAM.png" alt="BRAM" width="400"/>
+</p>
+
+Hình trên mô tả giao diện của một khối BRAM có dung lượng 18 Kb. Bộ nhớ BRAM hỗ trợ giao diện hai cổng (cổng A và cổng B), cho phép đọc và ghi độc lập. Mỗi cổng bao gồm các tín hiệu dữ liệu đầu vào (DIA/DIB), địa chỉ (ADDRA/ADDRB), xung nhịp (CLKA/CLKB), tín hiệu điều khiển ghi (WEA/WEB), và tín hiệu điều khiển đầu ra (DOA/DOB). Mỗi cổng của BRAM, A và B, đều có các tín hiệu riêng để điều khiển và truyền dữ liệu. Tín hiệu đầu vào dữ liệu (DIA/B) và tín hiệu đầu vào kiểm tra chẵn lẻ (DIPA/B) cung cấp dữ liệu và kiểm tra tính toàn vẹn của dữ liệu được ghi vào bộ nhớ. Tín hiệu địa chỉ (ADDRA/B) xác định vị trí dữ liệu cần truy xuất hoặc ghi vào. Tín hiệu WEA/B là tín hiệu cho phép ghi theo chiều rộng byte, quyết định việc ghi dữ liệu vào bộ nhớ. ENA/B là tín hiệu cho phép hoạt động của cổng; khi không hoạt động, không có dữ liệu nào được ghi vào BRAM và tín hiệu đầu ra vẫn giữ nguyên trạng thái trước đó. Tín hiệu RSTA/B được sử dụng để thiết lập lại hoặc đặt lại đồng bộ các thanh ghi đầu ra khi DO_REG = 1. CLKA/B là tín hiệu đầu vào xung nhịp cho cổng A hoặc B, điều khiển tốc độ hoạt động của bộ nhớ. Tín hiệu đầu ra dữ liệu (DOA/B) và tín hiệu đầu ra kiểm tra chẵn lẻ (DOPA/B) cung cấp dữ liệu và thông tin kiểm tra chẵn lẻ từ bộ nhớ. Cuối cùng, REGCEA/B là tín hiệu cho phép xung nhịp thanh ghi đầu ra, điều khiển hoạt động của các thanh ghi này.
 
 ### C. Danh sách thiết bị:
 Dưới đây là danh sách các thiết bị phần cứng cần chuẩn bị để thực hành Level 0 trên bo mạch **Kria KV260 FPGA**.
