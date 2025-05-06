@@ -57,6 +57,18 @@ Trong các hệ thống SoC FPGA, DRAM thường được kết nối với các
 </p>
 Hình trên minh họa sự khác biệt giữa phương thức truyền PIO và DMA. Trong phương thức truyền PIO, như thể hiện ở Hình (a) bên trên, truyền đơn lẻ (single transfer) yêu cầu CPU điều khiển từng lần truyền dữ liệu giữa DRAM và MY_IP, với mỗi đơn vị dữ liệu được xử lý riêng biệt. Phương thức này cần sự can thiệp của CPU vào mỗi thao tác truyền tải, với CPU phải gửi lệnh và xử lý từng đơn vị dữ liệu, điều này làm giảm hiệu suất và hiệu quả băng thông vì CPU phải thực hiện quá nhiều thao tác cho mỗi đơn vị dữ liệu. Ngược lại, trong phương thức truyền DMA, như thể hiện ở Hình (b) bên trên, dữ liệu được truyền theo dạng gói (burst transfer), cho phép dữ liệu được truyền liên tục từ DRAM vào MY_IP mà không cần sự can thiệp của CPU. Dữ liệu trong DMA có thể được truyền liên tục hoặc cách xa nhau tùy theo yêu cầu của ứng dụng. Việc truyền liên tục dữ liệu trong các gói giúp tận dụng tối đa băng thông và giảm thiểu độ trễ, vì DMA có khả năng truyền tải dữ liệu từ các vùng bộ nhớ liền kề mà không cần sự gián đoạn.
 
+<p align="center">
+  <img src="Hinh/PIO_DMA_3.png" alt="PIO_DMA_3" width="400"/>
+</p>
+
+Hình trên minh họa quá trình truyền dữ liệu được khởi tạo trong DRAM thông qua malloc() và sau đó truyền vào MY_IP, nơi MY_IP được ánh xạ vào bộ nhớ ảo thông qua mmap(). Quá trình này thể hiện việc sử dụng bộ nhớ ảo để cấp phát bộ nhớ, sau đó truyền dữ liệu từ bộ nhớ DRAM vào MY_IP. Đây là một ví dụ về quá trình truyền PIO (Programmed I/O), trong đó CPU điều khiển việc truyền tải dữ liệu giữa DRAM và MY_IP thông qua các lệnh I/O. Trong quá trình này, MY_IP sử dụng bộ nhớ ảo đã được ánh xạ từ vùng bộ nhớ vật lý của DRAM, giúp dữ liệu được truy cập và truyền gián tiếp từ DRAM vào MY_IP.
+
+<p align="center">
+  <img src="Hinh/PIO_DMA_4.png" alt="PIO_DMA_4" width="400"/>
+</p>
+
+Hình trên mô tả truyền dữ liệu từ DRAM đến IP thiết kế thông qua phương pháp truyền DMA. Dữ liệu được lưu trữ trong các tệp trên thẻ nhớ SD và sau đó được đọc vào bộ nhớ DRAM thông qua các lệnh truy xuất tiêu chuẩn như open("file"). Sau khi dữ liệu đã có mặt trong DRAM, quá trình truyền dữ liệu từ DRAM đến MY_IP được thực hiện thông qua DMA, giúp giảm tải cho CPU và tối ưu hóa băng thông. Quá trình này không yêu cầu sự can thiệp của CPU và đảm bảo hiệu suất truyền tải dữ liệu nhanh chóng và hiệu quả giữa bộ nhớ và các IP xử lý.
+
 ### B. Giới thiệu về PIO và DMA:
 
 ### C. Danh sách thiết bị:
