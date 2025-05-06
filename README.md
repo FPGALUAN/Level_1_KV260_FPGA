@@ -313,12 +313,63 @@ Trong file ở đường dẫn `KV260_Linux/project-spec/meta-user/recipes-bsp/d
 ```dts
 /include/ "system-conf.dtsi"
 / {
-    amba_pl@0 {
-        MY_IP@a0000000 {
+    reserved-memory {
+        #address-cells = <2>;
+        #size-cells = <2>;
+        ranges;
+        reserved: buffer@0 {
+                no-map;
+                reg = <0x8 0x0 0x0 0x80000000>;
+        };
+    };
+
+    amba: axi {
+        /* GDMA */
+        fpd_dma_chan1: dma-controller@fd500000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan2: dma-controller@fd510000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan3: dma-controller@fd520000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan4: dma-controller@fd530000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan5: dma-controller@fd540000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan6: dma-controller@fd550000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan7: dma-controller@fd560000 {
+            compatible = "generic-uio";
+        };
+
+        fpd_dma_chan8: dma-controller@fd570000 {
             compatible = "generic-uio";
         };
     };
+
+    amba_pl@0 {
+        MY_IP@a0000000 {
+                compatible = "generic-uio";
+        };
+    };
+
+    ddr_high@000800000000 {
+        compatible = "generic-uio";
+        reg = <0x8 0x0 0x0 0x80000000>;
+    };
 };
+
 ```
 File `system-user.dtsi` mẫu được lưu trong thư mục `KV260_Linux` ở github.
 
