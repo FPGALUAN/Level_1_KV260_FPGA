@@ -19,20 +19,23 @@ Hoặc truy cập link: https://youtu.be/iHpeTRM6k9U
 
 ## I. Yêu cầu thuật toán
 
-Trong Level 0 này, chúng ta sẽ hiện thực hàm toán học cơ bản:
+Dự án này hiện thực một **bộ tăng tốc phần cứng** để thực hiện phép nhân:
 
-> **Y = A × X + B**
+> **Y = A × X**
 
-sử dụng chuẩn fixed-point Q15.16 (1-bit dấu, 15-bit biểu diễn phần nguyên, 16-bit biểu dẫn số thập phân) cho các toán hạng A, X, B và kết quả Y. 
-	
-- Thiết kế cần được mô tả bằng ngôn ngữ Verilog HDL, có điều khiển thông qua Finite State Machine (FSM) và sử dụng các tín hiệu điều khiển Start, Done, và Valid để tích hợp trong hệ thống SoC.
-	
-- Giao tiếp giữa IP tự thiết kế và CPU được thực hiện thông qua PIO (Programmed I/O), tức là CPU sẽ ghi trực tiếp các giá trị A, X, B vào các thanh ghi điều khiển của IP và đọc kết quả Y cũng qua các thanh ghi. PIO là phương pháp giao tiếp đơn giản, dễ triển khai nhưng tiêu tốn thời gian xử lý của CPU và không phù hợp với truyền dữ liệu tốc độ cao.
+trong đó:
+- `A` là ma trận vuông kích thước 2^n × 2^n (n ≤ 14),
+- `X` là vector đầu vào có độ dài 2^n,
+- `Y` là vector kết quả có độ dài 2^n.
 
-
-⚠️Lưu ý: Đây là thiết kế ở Level 0, chỉ sử dụng phương pháp PIO đơn giản, chưa tích hợp cơ chế truyền DMA từ bộ nhớ DDRAM đến IP tự thiết kế. DMA sẽ được xem xét ở các level tiếp theo để tăng hiệu năng truyền dữ liệu.
-
-
+- Các phần tử của ma trận **A** và vector **X** chỉ nhận giá trị trong tập {1, 0, -1}.
+- Toàn bộ dữ liệu A, X, Y được biểu diễn bằng số nguyên 16-bit có dấu.
+- Hệ thống hỗ trợ cấu hình kích thước động thông qua các thanh ghi cấu hình.
+- Bộ tăng tốc bao gồm:
+  - **FSM (Finite State Machine)** với 4 trạng thái: `IDLE`, `LOAD`, `EXECUTE`, `DONE`.
+  - **BRAM nội bộ** để lưu trữ A, X, Y.
+  - Giao tiếp điều khiển sử dụng **PIO (Programmed I/O)**.
+  - Truyền dữ liệu sử dụng **AXI-DMA**, băng thông **128-bit mỗi chu kỳ**.
 Bài học được thiết kế cho những người mới bắt đầu với phát triển hệ thống SoC trên nền FPGA.
 
 ---
