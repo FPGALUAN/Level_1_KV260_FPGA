@@ -135,13 +135,10 @@ Kế tiếp tôi sẽ trình bày chi tiết 8 bước trên.
 📌 Tín hiệu chính:  
 `A_in`, `X_in`, `B_in` (đầu vào), `Y_out`, `Valid_out` (đầu ra), `Start_in`, `Done_in` (điều khiển)
 
-<p align="center">
-  <img src="Hinh/Hinh_3.png" alt="Hinh_3" width="600"/>
-</p>
-
-<p align="center">
-  <img src="Hinh/Hinh_3.2.png" alt="Hinh_3" width="600"/>
-</p>
+<div style="text-align: center;">
+  <img src="Hinh/Hinh_3.png" alt="Hinh_3" width="400" style="display: inline-block; margin-right: 20px;">
+  <img src="Hinh/Hinh_3.2.png" alt="Hinh_3.2" width="400" style="display: inline-block;">
+</div>
 
 ### B. Bước 2: Mô tả thiết kế phần cứng và mô phỏng chức năng
 
