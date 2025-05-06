@@ -48,9 +48,9 @@ Bài học được thiết kế cho những người mới bắt đầu với p
 ### A. Giới thiệu về PIO và DMA:
 
 <p align="center">
-  <img src="Hinh/PIO_DMA_1.png" alt="PIO_DMA_1" width="500"/>
+  <img src="Hinh/PIO_DMA_1.png" alt="PIO_DMA_1" width="400"/>
 </p>
-
+Trong các hệ thống SoC FPGA, DRAM thường được kết nối với các IP người dùng thiết kế để cung cấp dung lượng lưu trữ cao, đồng thời hỗ trợ truy xuất dữ liệu nhanh chóng cho các phép toán tính toán hoặc xử lý tín hiệu. DRAM lưu trữ các dữ liệu tạm thời cho các IP người dùng thiết kế. Cách thức sử dụng DRAM trong hệ thống SoC FPGA có thể thực hiện qua hai phương thức chính: PIO (Programmed I/O-Đầu ra vào được lập trình) và DMA (Direct Memory Access- Truy cập bộ nhớ trực tiếp). Trong phương thức PIO, CPU trực tiếp điều khiển việc truyền tải dữ liệu giữa DRAM và các IP thông qua các lệnh I/O, như được mô tả trong Hình (a). Phương thức này dễ triển khai nhưng có thể gây tải nặng cho CPU vì CPU phải xử lý tất cả các thao tác truyền nhận dữ liệu. Ngược lại, DMA cho phép truyền tải dữ liệu giữa DRAM và các IP mà không cần sự can thiệp của CPU, giúp giảm tải cho CPU và tối ưu hóa băng thông, như mô tả trong Hình (b). 
 ### B. Giới thiệu về PIO và DMA:
 
 ### C. Danh sách thiết bị:
