@@ -22,7 +22,11 @@ Hoặc truy cập link: https://youtu.be/iHpeTRM6k9U
 Dự án này hiện thực một **bộ tăng tốc phần cứng** để thực hiện phép nhân ma trận A và vector X:
 
 > **Y = A × X**
-![Mô tả nhân ma trận](Hinh/Matrix_Vector.png)
+
+<p align="center">
+  <img src="Hinh/Matrix_Vector.png" alt="Mô tả nhân ma trận vector" width="600"/>
+</p>
+
 trong đó:
 - `A` là ma trận vuông kích thước 2^n × 2^n (n ≤ 14),
 - `X` là vector đầu vào có độ dài 2^n,
