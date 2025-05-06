@@ -1,0 +1,7 @@
+Running: xsim.dir/Matrix_Vector_Multiplication_tb_behav/xsimk -simmode gui -wdb Matrix_Vector_Multiplication_tb_behav.wdb -simrunnum 0 -socket 34359
+Design successfully loaded
+Design Loading Memory Usage: 45940 KB (Peak: 45948 KB)
+Design Loading CPU Usage: 90 ms
+Simulation completed
+Simulation Memory Usage: 206556 KB (Peak: 323264 KB)
+Simulation CPU Usage: 1070 ms

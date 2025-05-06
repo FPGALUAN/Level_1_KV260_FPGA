@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/SoC/SoC.hw/hw_1/wave/hw_ila_data_1/hw_ila_data_1.wdb" id="1">
+         <top_modules>
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0"></ZoomStartTime>
+      <ZoomEndTime time="1,025"></ZoomEndTime>
+      <Cursor1Time time="0"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="243"></NameColumnWidth>
+      <ValueColumnWidth column_width="159"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wave_markers>
+   </wave_markers>
+   <wvobject type="array" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/W_Addr_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/W_Addr_in_r[11:0]</obj_property>
+      <obj_property name="ObjectShortName">W_Addr_in_r[11:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/W_Valid_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/W_Valid_in_r</obj_property>
+      <obj_property name="ObjectShortName">W_Valid_in_r</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/W_Data_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/W_Data_in_r[127:0]</obj_property>
+      <obj_property name="ObjectShortName">W_Data_in_r[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/R_Addr_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/R_Addr_in_r[10:0]</obj_property>
+      <obj_property name="ObjectShortName">R_Addr_in_r[10:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/R_Valid_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/R_Valid_in_r</obj_property>
+      <obj_property name="ObjectShortName">R_Valid_in_r</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/n_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/n_in_r[3:0]</obj_property>
+      <obj_property name="ObjectShortName">n_in_r[3:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/Load_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/Load_in_r</obj_property>
+      <obj_property name="ObjectShortName">Load_in_r</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/Start_in_r">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/Start_in_r</obj_property>
+      <obj_property name="ObjectShortName">Start_in_r</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/Done_out_w">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/Done_out_w</obj_property>
+      <obj_property name="ObjectShortName">Done_out_w</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="SoC_i/MY_IP_0/inst/AXI4_Mapping/R_Data_out_w">
+      <obj_property name="ElementShortName">SoC_i/MY_IP_0/inst/AXI4_Mapping/R_Data_out_w[127:0]</obj_property>
+      <obj_property name="ObjectShortName">R_Data_out_w[127:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="LABELRADIX">true</obj_property>
+      <obj_property name="WaveformStyle">STYLE_DIGITAL</obj_property>
+   </wvobject>
+</wave_config>

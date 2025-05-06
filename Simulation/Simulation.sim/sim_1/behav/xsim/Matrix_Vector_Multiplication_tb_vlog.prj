@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../RTL/Dual_Port_BRAM.v" \
+"../../../../../RTL/Matrix_Vector_Multiplication.v" \
+"../../../../../RTL/PMAU.v" \
+"../../../../../TB/Matrix_Vector_Multiplication_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

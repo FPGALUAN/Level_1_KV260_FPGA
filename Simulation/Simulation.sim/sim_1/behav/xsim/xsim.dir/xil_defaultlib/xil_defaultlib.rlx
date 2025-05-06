@@ -1,0 +1,10 @@
+0.7
+2020.2
+Feb 21 2023
+20:06:57
+/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/RTL/Dual_Port_BRAM.v,1746229378,verilog,,/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/RTL/Matrix_Vector_Multiplication.v,,Dual_Port_BRAM,,,,,,,,
+/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/RTL/Matrix_Vector_Multiplication.v,1746486077,verilog,,/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/RTL/PMAU.v,,Matrix_Vector_Multiplication,,,,,,,,
+/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/RTL/PMAU.v,1746432876,verilog,,/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/TB/Matrix_Vector_Multiplication_tb.v,,PMAU,,,,,,,,
+/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/Simulation/Simulation.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
+/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/TB/Matrix_Vector_Multiplication_tb.v,1746510915,verilog,,,,Matrix_Vector_Multiplication_tb,,,,,,,,
+/home/hoailuan/Phat_Trien_Phan_Cung_FPGA/Kria_KV260_FPGA/Level_1/TB/PMAU_tb.v,1746399913,verilog,,,,PMAU_tb,,,,,,,,

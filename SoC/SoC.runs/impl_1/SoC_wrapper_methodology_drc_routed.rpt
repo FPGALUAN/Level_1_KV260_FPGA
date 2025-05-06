@@ -1,0 +1,696 @@
+Copyright 1986-2023 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2022.2.2 (lin64) Build 3788238 Tue Feb 21 19:59:23 MST 2023
+| Date         : Tue May  6 15:30:22 2025
+| Host         : cad115 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_methodology -file SoC_wrapper_methodology_drc_routed.rpt -pb SoC_wrapper_methodology_drc_routed.pb -rpx SoC_wrapper_methodology_drc_routed.rpx
+| Design       : SoC_wrapper
+| Device       : xck26-sfvc784-2LV-c
+| Speed File   : -2LV
+| Design State : Fully Routed
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max violations: <unlimited>
+             Violations found: 130
++-----------+----------+--------------------------------+------------+
+| Rule      | Severity | Description                    | Violations |
++-----------+----------+--------------------------------+------------+
+| LUTAR-1   | Warning  | LUT drives async reset alert   | 1          |
+| TIMING-20 | Warning  | Non-clocked latch              | 128        |
+| LATCH-1   | Advisory | Existing latches in the design | 1          |
++-----------+----------+--------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell dbg_hub/inst/BSCANID.u_xsdbm_id/SWITCH_N_EXT_BSCAN.bscan_switch/m_bscan_sel[0]_INST_0, with 2 or more inputs, drives asynchronous preset/clear pin(s) dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[10]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[11]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[12]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[13]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[14]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[15]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[6]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[7]/CLR,
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[8]/CLR
+dbg_hub/inst/BSCANID.u_xsdbm_id/CORE_XSDB.U_ICON/U_CMD/iTARGET_reg[9]/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+TIMING-20#1 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[0] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[0]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#2 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[100] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[100]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#3 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[101] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[101]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#4 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[102] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[102]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#5 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[103] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[103]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#6 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[104] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[104]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#7 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[105] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[105]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#8 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[106] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[106]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#9 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[107] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[107]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#10 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[108] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[108]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#11 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[109] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[109]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#12 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[10] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[10]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#13 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[110] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[110]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#14 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[111] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[111]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#15 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[112] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[112]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#16 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[113] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[113]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#17 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[114] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[114]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#18 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[115] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[115]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#19 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[116] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[116]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#20 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[117] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[117]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#21 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[118] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[118]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#22 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[119] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[119]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#23 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[11] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[11]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#24 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[120] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[120]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#25 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[121] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[121]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#26 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[122] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[122]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#27 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[123] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[123]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#28 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[124] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[124]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#29 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[125] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[125]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#30 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[126] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[126]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#31 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[127] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[127]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#32 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[12] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[12]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#33 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[13] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[13]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#34 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[14] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[14]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#35 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[15] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[15]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#36 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[16] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[16]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#37 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[17] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[17]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#38 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[18] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[18]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#39 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[19] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[19]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#40 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[1] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[1]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#41 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[20] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[20]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#42 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[21] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[21]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#43 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[22] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[22]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#44 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[23] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[23]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#45 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[24] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[24]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#46 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[25] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[25]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#47 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[26] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[26]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#48 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[27] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[27]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#49 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[28] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[28]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#50 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[29] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[29]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#51 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[2] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[2]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#52 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[30] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[30]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#53 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[31] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[31]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#54 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[32] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[32]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#55 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[33] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[33]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#56 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[34] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[34]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#57 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[35] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[35]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#58 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[36] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[36]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#59 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[37] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[37]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#60 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[38] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[38]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#61 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[39] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[39]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#62 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[3] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[3]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#63 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[40] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[40]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#64 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[41] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[41]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#65 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[42] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[42]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#66 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[43] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[43]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#67 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[44] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[44]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#68 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[45] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[45]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#69 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[46] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[46]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#70 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[47] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[47]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#71 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[48] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[48]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#72 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[49] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[49]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#73 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[4] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[4]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#74 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[50] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[50]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#75 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[51] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[51]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#76 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[52] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[52]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#77 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[53] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[53]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#78 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[54] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[54]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#79 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[55] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[55]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#80 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[56] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[56]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#81 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[57] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[57]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#82 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[58] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[58]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#83 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[59] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[59]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#84 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[5] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[5]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#85 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[60] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[60]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#86 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[61] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[61]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#87 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[62] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[62]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#88 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[63] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[63]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#89 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[64] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[64]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#90 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[65] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[65]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#91 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[66] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[66]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#92 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[67] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[67]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#93 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[68] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[68]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#94 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[69] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[69]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#95 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[6] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[6]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#96 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[70] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[70]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#97 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[71] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[71]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#98 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[72] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[72]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#99 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[73] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[73]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#100 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[74] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[74]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#101 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[75] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[75]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#102 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[76] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[76]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#103 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[77] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[77]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#104 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[78] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[78]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#105 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[79] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[79]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#106 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[7] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[7]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#107 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[80] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[80]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#108 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[81] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[81]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#109 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[82] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[82]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#110 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[83] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[83]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#111 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[84] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[84]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#112 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[85] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[85]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#113 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[86] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[86]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#114 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[87] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[87]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#115 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[88] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[88]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#116 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[89] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[89]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#117 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[8] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[8]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#118 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[90] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[90]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#119 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[91] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[91]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#120 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[92] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[92]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#121 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[93] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[93]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#122 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[94] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[94]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#123 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[95] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[95]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#124 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[96] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[96]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#125 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[97] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[97]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#126 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[98] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[98]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#127 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[99] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[99]/G is not reached by a timing clock
+Related violations: <none>
+
+TIMING-20#128 Warning
+Non-clocked latch  
+The latch SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[9] cannot be properly analyzed as its control pin SoC_i/MY_IP_0/inst/AXI4_Mapping/axi_rdata_reg[9]/G is not reached by a timing clock
+Related violations: <none>
+
+LATCH-1#1 Advisory
+Existing latches in the design  
+There are 128 latches found in the design. Inferred latches are often the result of HDL coding mistakes, such as incomplete if or case statements.
+Related violations: <none>
+
+
