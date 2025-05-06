@@ -1,6 +1,5 @@
-For [README english](https://github.com/FPGALUAN/Level_0_KV260_FPGA/blob/main/README-eng.md)
+For [README english](https://github.com/FPGALUAN/Level_1_KV260_FPGA/blob/main/README-en.md)
 
-For [README japanese](https://github.com/FPGALUAN/Level_0_KV260_FPGA/blob/main/README-jp.md)
 
 # 🎓 Thiết Kế Phần Cứng và Hệ Thống SoC trên FPGA – Level 1 (Kria KV260)
 
