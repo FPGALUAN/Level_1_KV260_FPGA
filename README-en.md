@@ -460,9 +460,5 @@ As long as you study well, understand the lesson and spread knowledge to those w
 
 ---
 
-<p align="center">
-<img src="Hinh/Bank.png" alt="Bank Account" width="200"/>
-</p>
-
 
 
