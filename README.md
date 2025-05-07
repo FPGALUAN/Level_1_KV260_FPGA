@@ -235,7 +235,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   <img src="Hinh/Hinh_4.png" alt="Mô phỏng trên Vivado" width="700"/>
 </p>
 
-### C. Bước 4: Tích hợp Integrated Logic Analyzer (ILA) để kiểm tra lỗi khi chạy thực tế trên FPGA
+### D. Bước 4: Tích hợp Integrated Logic Analyzer (ILA) để kiểm tra lỗi khi chạy thực tế trên FPGA
 - **ILA là gì?**  
   ILA (Integrated Logic Analyzer) là một IP lõi do Xilinx cung cấp, cho phép người dùng quan sát các tín hiệu bên trong FPGA trong thời gian thực, giống như một máy hiện sóng tích hợp trực tiếp vào chip.
 
@@ -287,7 +287,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   <img src="Hinh/ILA.png" alt="ILA" width="400"/>
 </p>
 
-### D. Bước 5: Đóng gói IP (Package IP) trong Vivado
+### E. Bước 5: Đóng gói IP (Package IP) trong Vivado
 
 Sau khi mô tả phần cứng bằng **Verilog HDL** và mô phỏng thành công, chúng ta tiến hành **đóng gói thiết kế thành một IP** để có thể tái sử dụng và tích hợp vào hệ thống SoC trong các bước tiếp theo.
 
@@ -317,7 +317,7 @@ Các bước thực hiện:
 
 ![Hình 5 - Giao diện đóng gói IP](Hinh/Hinh_5.png)
 
-### D. Bước 4: Tạo Block Design cho hệ thống SoC trên Vivado
+### F. Bước 6: Tạo Block Design cho hệ thống SoC trên Vivado
 
 Sau khi đóng gói IP thành công, ta tiến hành tạo hệ thống SoC bằng cách sử dụng **Block Design** trong Vivado.
 
@@ -339,7 +339,7 @@ Các thành phần chính trong sơ đồ Block Design:
   <img src="Hinh/Hinh_6.png" alt="Block Design SoC" width="750"/>
 </p>
 
-### E. Bước 5: Tổng hợp (Synthesis), Place & Route, và tạo file Bitstream
+### G. Bước 7: Tổng hợp (Synthesis), Place & Route, và tạo file Bitstream
 
 Sau khi hoàn tất sơ đồ kết nối:
 
@@ -353,7 +353,7 @@ Sau khi hoàn tất sơ đồ kết nối:
 > Đây là bước quan trọng để chuyển thiết kế thành file cấu hình `.bit` có thể nạp lên FPGA và file `.xsa` để cài đặt Petalinux cho FPGA.
 
 
-### F. Bước 6: Thiết lập môi trường PetaLinux và tạo driver
+### H. Bước 8: Thiết lập môi trường PetaLinux và tạo driver
 
 Sau khi hoàn tất thiết kế phần cứng và tạo Block Design trong Vivado, bước tiếp theo là **xuất file phần cứng (`.xsa`)** để sử dụng trong PetaLinux nhằm tạo hệ điều hành và driver phù hợp cho hệ thống.
 
@@ -506,7 +506,7 @@ File `system-user.dtsi` mẫu được lưu trong thư mục `KV260_Linux` ở g
 petalinux-build
 ```
 
-### G. Bước 7: Tạo image khởi động và rootfs cho Linux trên SoC FPGA
+### J. Bước 9: Tạo image khởi động và rootfs cho Linux trên SoC FPGA
 
 Sau khi build project thành công, gõ lệnh này để đóng gói file khởi động BOOT.BIN cùng với U-Boot phù hợp cho hệ thống.
 
@@ -520,7 +520,7 @@ Sau đó cắm SD card vào PC, tiến hàn phân vùng và định dạng thẻ
 
 > File rootfs này chứa hệ điều hành Debian đã được cấu hình sẵn cho kiến trúc ARM64, hỗ trợ giao diện XFCE và dễ dàng cài đặt thêm ứng dụng bằng `apt`.
 
-### H. Bước 8: Phát triển phần mềm nhúng (Embedded C/ C++)
+### K. Bước 10: Phát triển phần mềm nhúng (Embedded C/ C++)
 
 
 Sau khi đã chuẩn bị đầy đủ hệ điều hành Linux trên FPGA, chúng ta tiến hành chạy chương trình nhúng điều khiển IP tự thiết kế bằng ngôn ngữ **C/C++**.
