@@ -234,7 +234,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 
 Sau khi mô tả phần cứng bằng **Verilog HDL** và mô phỏng thành công, chúng ta tiến hành **đóng gói thiết kế thành một IP** để có thể tái sử dụng và tích hợp vào hệ thống SoC trong các bước tiếp theo.
 
-Hình dưới minh họa cách **IP tự thiết kế (`MY_IP`)** được tích hợp vào hệ thống SoC và kết nối với CPU thông qua **AXI4 Bus**. Tín hiệu đầu vào/ra của mạch (`A_in`, `X_in`, `B_in`, `Start_in`, `Done_in`) được ánh xạ qua giao diện AXI4-Full thông qua lớp `AXI4 Mapping`.
+Hình dưới minh họa cách **IP tự thiết kế (`MY_IP`)** được tích hợp vào hệ thống SoC và kết nối với CPU thông qua **AXI4 Bus**. Tín hiệu đầu vào/ra của mạch (`W_Addr`, `W_Valid`, `W_Data`, `Start`,...) được ánh xạ qua giao diện AXI4-Full thông qua lớp `AXI4 Mapping`.
 
 <p align="center">
   <img src="Hinh/Hinh_MY_IP.png" alt="Sơ đồ tích hợp MY_IP vào hệ thống SoC" width="750"/>
