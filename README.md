@@ -74,7 +74,7 @@ Bộ nhớ Block RAM (BRAM) là một thành phần quan trọng trong FPGA, cun
 
 <p align="center">
   <img src="Hinh/Vi_tri_BRAM.png" alt="Hình 3.1" width="300"/>
-  <img src="Hinh/BRAM.png" alt="Hình 3.2" width="300"/>
+  <img src="Hinh/BRAM.png" alt="Hình 3.2" width="200"/>
 </p>
 
 
