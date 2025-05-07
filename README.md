@@ -203,9 +203,10 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 
 💡 Cách tiếp cận này cho phép hệ thống xử lý ma trận cực lớn mà không vượt giới hạn tài nguyên FPGA nội bộ. Đây là kỹ thuật thường gặp trong các hệ thống tăng tốc AI hoặc DSP quy mô lớn.
 
-### B. Bước 2: Mô tả thiết kế phần cứng và mô phỏng chức năng
+### B. Bước 3: Mô tả thiết kế phần cứng và mô phỏng chức năng
 
-- Viết mã **Verilog HDL** mô tả mạch số thực hiện phép tính **Y = A × X + B** với chuẩn **fixed-point Q15.16** cho các toán hạng.
+- Viết mã **Verilog HDL** mô tả mạch số thực hiện phép nhân ma trận A và vector X với các giá trị trong ma trận và vector sử dụng **dữ liệu 16-bit có dấu**.
+
 - **Mã nguồn RTL Verilog** được đặt trong thư mục:  
   - `RTL/MAC.v`
   
@@ -214,8 +215,12 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   - Kết quả tính toán in ra cửa sổ console (PASS/FAIL từng test case)
 
 - **Mã nguồn testbench** được đặt trong thư mục:  
-  - `TB/TB_MAC.v`
-
+  - ```text
+    RTL/
+    ├── Matrix_Vector_Multiplication.v  // Module top xử lý nhân ma trận-vector
+    └── PMAU.v                          // Khối xử lý song song Parallel Multiply-Accumulate Unit
+    ```
+    
 - **Project Vivado (2022.2)** đã cấu hình sẵn cho mô phỏng nằm trong thư mục:  
   - `Simulation/`
 
