@@ -193,7 +193,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 5. **Kết quả Y_batch** được ghi vào cụm BRAM Y, sau đó DMA ghi trả về DDRAM.
 6. Tiếp tục với batch tiếp theo đến khi toàn bộ `Y` được xử lý.
 
-### 📌 Tổng kết:
+### Tổng kết:
 
 | Thành phần | Số phần tử tối đa | Hướng xử lý |
 |------------|------------------|-------------|
@@ -208,19 +208,21 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 - Viết mã **Verilog HDL** mô tả mạch số thực hiện phép nhân ma trận A và vector X với các giá trị trong ma trận và vector sử dụng **dữ liệu 16-bit có dấu**.
 
 - **Mã nguồn RTL Verilog** được đặt trong thư mục:  
-  - `RTL/MAC.v`
-  
-- Viết **testbench** để mô phỏng **10 test case** với các giá trị thực (real), kiểm tra đầu ra `Y_out` có khớp với giá trị mong đợi. Chạy mô phỏng bằng **Vivado Simulator**, quan sát:
-  - Dạng sóng tín hiệu trên waveform
-  - Kết quả tính toán in ra cửa sổ console (PASS/FAIL từng test case)
-
-- **Mã nguồn testbench** được đặt trong thư mục:  
   - ```text
     RTL/
     ├── Matrix_Vector_Multiplication.v  // Module top xử lý nhân ma trận-vector
     └── PMAU.v                          // Khối xử lý song song Parallel Multiply-Accumulate Unit
     ```
-    
+  
+- Mô phỏng chức năng cho khối xử lý PMAU:
+    - **Testbench:** `TB/PMAU_tb.v`
+    - Chạy mô phỏng bằng **Vivado Simulator**
+    - Kết quả kiểm tra được hiển thị trực tiếp trong cửa sổ console (PASS/FAIL từng trường hợp)
+
+-Mô phỏng toàn hệ thống Matrix × Vector:
+    - **Testbench:** `TB/Matrix_Vector_Multiplication_tb.v`
+    - Kết quả `Y_out` sẽ được ghi ra file: `C_Code_MatrixVector/Vector_Y_Hardware.txt` để so sánh kết quả này với file đầu ra chuẩn sinh bởi C code `C_Code_MatrixVector/Vector_Y_Result.txt`.
+
 - **Project Vivado (2022.2)** đã cấu hình sẵn cho mô phỏng nằm trong thư mục:  
   - `Simulation/`
 
