@@ -284,7 +284,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   - Dùng ILA để quan sát `Valid_out`, `Y_out` có xuất hiện đúng lúc không
 
 <p align="center">
-  <img src="Hinh/ILA.png" alt="ILA" width="40"/>
+  <img src="Hinh/ILA.png" alt="ILA" width="400"/>
 </p>
 
 ### D. Bước 5: Đóng gói IP (Package IP) trong Vivado
