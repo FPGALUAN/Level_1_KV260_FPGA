@@ -138,10 +138,10 @@ Trong bước này, chúng ta sử dụng ngôn ngữ bậc cao C để mô tả
 
 - Lý do sử dụng ngôn ngữ bậc cao:
 
-1. **Tiết kiệm thời gian phát triển**:  
+  - **Tiết kiệm thời gian phát triển**:  
    So với việc viết Verilog ngay từ đầu, việc hiện thực thuật toán bằng C/C++ giúp nhanh chóng kiểm tra tính đúng đắn của thuật toán, nhất là với kích thước ma trận lớn.
 
-2. **Tạo dữ liệu chuẩn để so sánh (Golden Dataset)**:  
+  - **Tạo dữ liệu chuẩn để so sánh (Golden Dataset)**:  
    Kết quả từ chương trình C/C++ sẽ được lưu lại để so sánh với kết quả từ mạch Verilog. Việc này đặc biệt quan trọng trong giai đoạn debug hoặc xác minh chức năng (functional verification).
 
 
