@@ -130,18 +130,17 @@ Kế tiếp tôi sẽ trình bày chi tiết 8 bước trên.
 Trong bước này, chúng ta sử dụng ngôn ngữ bậc cao C để mô tả và kiểm thử thuật toán nhân **ma trận A × vector Y**.
 
 - Mục tiêu:
-- Hiểu rõ **bản chất hoạt động** của phép nhân ma trận–vector.
-- Chuẩn bị **dataset đầu vào và đầu ra đúng**, phục vụ cho việc so sánh khi test module Verilog.
-- Tiết kiệm thời gian hơn so với viết Verilog trực tiếp trong giai đoạn đầu.
+    - Hiểu rõ **bản chất hoạt động** của phép nhân ma trận–vector.
+    - Chuẩn bị **dataset đầu vào và đầu ra đúng**, phục vụ cho việc so sánh khi test module Verilog.
+    - Tiết kiệm thời gian hơn so với viết Verilog trực tiếp trong giai đoạn đầu.
 
 📂 Mã nguồn C được đặt trong thư mục: `C_Code_MatrixVector`
 
 - Lý do sử dụng ngôn ngữ bậc cao:
 
-  - **Tiết kiệm thời gian phát triển**:  
-   So với việc viết Verilog ngay từ đầu, việc hiện thực thuật toán bằng C/C++ giúp nhanh chóng kiểm tra tính đúng đắn của thuật toán, nhất là với kích thước ma trận lớn.
-
-  - **Tạo dữ liệu chuẩn để so sánh (Golden Dataset)**:  
+    - **Tiết kiệm thời gian phát triển**:  
+     So với việc viết Verilog ngay từ đầu, việc hiện thực thuật toán bằng C/C++ giúp nhanh chóng kiểm tra tính đúng đắn của thuật toán, nhất là với kích thước ma trận lớn.
+    - **Tạo dữ liệu chuẩn để so sánh (Golden Dataset)**:  
    Kết quả từ chương trình C/C++ sẽ được lưu lại để so sánh với kết quả từ mạch Verilog. Việc này đặc biệt quan trọng trong giai đoạn debug hoặc xác minh chức năng (functional verification).
 
 
