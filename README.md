@@ -139,7 +139,7 @@ Mục tiêu:
 Lý do sử dụng ngôn ngữ bậc cao:
 
 - **Tiết kiệm thời gian phát triển**: So với việc viết Verilog ngay từ đầu, việc hiện thực thuật toán bằng C/C++ giúp nhanh chóng kiểm tra tính đúng đắn của thuật toán, nhất là với kích thước ma trận lớn.
-- **Tạo dữ liệu chuẩn để so sánh (Golden Dataset)**: Kết quả từ chương trình C/C++ sẽ được lưu lại để so sánh với kết quả từ mạch Verilog. Việc này đặc biệt quan trọng trong giai đoạn debug hoặc xác minh chức năng (functional verification).
+- **Tạo dữ liệu chuẩn để so sánh**: Kết quả từ chương trình C/C++ sẽ được lưu lại để so sánh với kết quả từ mạch Verilog. Việc này đặc biệt quan trọng trong giai đoạn debug hoặc xác minh chức năng (functional verification).
 
 
 ### B. Bước 2: Xác định yêu cầu và đặc tả hệ thống (vẽ sơ đồ khối)
@@ -171,6 +171,41 @@ Sơ đồ khối tổng thể gồm các thành phần:
   <img src="Hinh/Hinh_3.png" alt="Hinh_3" width="400" style="display: inline-block; margin-right: 20px;">
   <img src="Hinh/Hinh_3.2.png" alt="Hinh_3.2" width="400" style="display: inline-block;">
 </div>
+
+### 🧠 Lưu ý về giới hạn BRAM và DMA truyền nhiều lần
+
+Trong thiết kế, mỗi cụm 8 BRAM có khả năng lưu trữ tối đa:
+
+- `2^14` giá trị 16-bit (tức 16 KB dữ liệu)
+
+Tuy nhiên, khi kích thước ma trận tăng lớn hơn `2^7 × 2^7 = 2^14` phần tử (tương đương `n > 7`), thì tổng số phần tử trong **ma trận A** sẽ vượt quá khả năng lưu trữ của cụm BRAM hiện tại.
+Ví dụ:
+- Với `n = 10`, ma trận A có kích thước `2^10 × 2^10 = 2^20` phần tử.
+- Mỗi cụm 8 BRAM chỉ chứa được `2^14` giá trị → cần **2^20 / 2^14 = 2^6 = 64 lần truyền DMA** để nạp toàn bộ A.
+Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
+
+Để xử lý dữ liệu vượt kích thước BRAM, hệ thống sử dụng cơ chế **truyền DMA lặp lại nhiều lần**, theo từng phần nhỏ như sau:
+
+1. **Chia ma trận A thành nhiều batch** theo từng dòng (hoặc khối con), mỗi batch chứa tối đa `2^14` phần tử.
+2. **Gửi batch A[k] từ DDRAM → cụm 8 BRAM A** qua DMA.
+3. Dữ liệu `vector X` có độ dài `2^n`, cũng được chia thành batch nếu cần, nhưng thường có thể giữ nguyên trong BRAM do kích thước nhỏ hơn.
+4. Thực hiện phép nhân `Y_batch = A[k] × X`.
+5. **Kết quả Y_batch** được ghi vào cụm BRAM Y, sau đó DMA ghi trả về DDRAM.
+6. Tiếp tục với batch tiếp theo đến khi toàn bộ `Y` được xử lý.
+
+---
+
+### 📌 Tổng kết:
+
+| Thành phần | Số phần tử tối đa | Hướng xử lý |
+|------------|------------------|-------------|
+| Ma trận A  | 2ⁿ × 2ⁿ          | Chia theo dòng, truyền DMA nhiều lần |
+| Vector X   | 2ⁿ               | Thường giữ cố định trong BRAM |
+| Vector Y   | 2ⁿ               | Ghi theo từng batch vào BRAM, rồi DMA trả về |
+
+---
+
+💡 Cách tiếp cận này cho phép hệ thống xử lý ma trận cực lớn mà không vượt giới hạn tài nguyên FPGA nội bộ. Đây là kỹ thuật thường gặp trong các hệ thống tăng tốc AI hoặc DSP quy mô lớn.
 
 ### B. Bước 2: Mô tả thiết kế phần cứng và mô phỏng chức năng
 
