@@ -531,7 +531,7 @@ Trước khi chạy chương trình, cần đảm bảo các thiết bị UIO (U
  ```
 -Đảm bảo có các thiết bị với tên như sau (thứ tự có thể thay đổi): **MY_IP** (tên IP tự thiết kế), **dma-controller** (DMA AXI), ddr_high (vùng DMA dùng chung với PS)
 
-👉 Nếu không thấy hoặc tên sai, cần kiểm tra lại Device Tree và file .dtbo trong quá trình build PetaLinux.
+👉 Nếu không thấy hoặc tên sai, cần kiểm tra lại **system-user.dtsi** trong quá trình build PetaLinux.
 
 Sau khi đã chuẩn bị đầy đủ hệ điều hành Linux trên FPGA, chúng ta tiến hành chạy chương trình nhúng điều khiển IP tự thiết kế bằng ngôn ngữ **C/C++**.
 
