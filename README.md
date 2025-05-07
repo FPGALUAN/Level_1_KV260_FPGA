@@ -324,7 +324,7 @@ Sau khi đóng gói IP thành công, ta tiến hành tạo hệ thống SoC bằ
 Các thành phần chính trong sơ đồ Block Design:
 
 - **ZYNQ MPSoC**: bộ xử lý chính điều khiển hệ thống, cấu hình chân và kết nối AXI.
-- **IP tự thiết kế (MY_IP_v1_0)**: chứa hàm MAC `Y = A * X + B`, được kết nối thông qua chuẩn **AXI4-Full**.
+- **IP tự thiết kế (MY_IP_v1_0)**: chứa phần cứng tính nhân ma trận và vector, được kết nối thông qua chuẩn **AXI4-Full**.
 - **AXI SmartConnect**: cầu nối giữa các master/slave sử dụng giao thức AXI.
 - **Reset module**: đồng bộ hóa tín hiệu reset giữa phần xử lý và phần lập trình.
 
