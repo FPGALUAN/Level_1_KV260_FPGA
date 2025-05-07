@@ -230,7 +230,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   <img src="Hinh/Hinh_4.png" alt="Mô phỏng trên Vivado" width="700"/>
 </p>
 
-### C. Bước 3: Đóng gói IP (Package IP) trong Vivado
+### C. Bước 5: Đóng gói IP (Package IP) trong Vivado
 
 Sau khi mô tả phần cứng bằng **Verilog HDL** và mô phỏng thành công, chúng ta tiến hành **đóng gói thiết kế thành một IP** để có thể tái sử dụng và tích hợp vào hệ thống SoC trong các bước tiếp theo.
 
