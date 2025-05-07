@@ -193,8 +193,6 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 5. **Kết quả Y_batch** được ghi vào cụm BRAM Y, sau đó DMA ghi trả về DDRAM.
 6. Tiếp tục với batch tiếp theo đến khi toàn bộ `Y` được xử lý.
 
----
-
 ### 📌 Tổng kết:
 
 | Thành phần | Số phần tử tối đa | Hướng xử lý |
@@ -202,8 +200,6 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 | Ma trận A  | 2ⁿ × 2ⁿ          | Chia theo dòng, truyền DMA nhiều lần |
 | Vector X   | 2ⁿ               | Thường giữ cố định trong BRAM |
 | Vector Y   | 2ⁿ               | Ghi theo từng batch vào BRAM, rồi DMA trả về |
-
----
 
 💡 Cách tiếp cận này cho phép hệ thống xử lý ma trận cực lớn mà không vượt giới hạn tài nguyên FPGA nội bộ. Đây là kỹ thuật thường gặp trong các hệ thống tăng tốc AI hoặc DSP quy mô lớn.
 
