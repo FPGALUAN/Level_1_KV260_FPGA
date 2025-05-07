@@ -522,6 +522,16 @@ Sau đó cắm SD card vào PC, tiến hàn phân vùng và định dạng thẻ
 
 ### K. Bước 10: Phát triển phần mềm nhúng (Embedded C/ C++)
 
+Trước khi chạy chương trình, cần đảm bảo các thiết bị UIO (User I/O) đã được hệ điều hành nhận diện.
+
+-Kiểm tra danh sách UIO hiện có:
+ ```bash
+ ls /sys/class/uio/
+ cat /sys/class/uio/uioX/name (ví dụ cat /sys/class/uio/uio13/name)
+ ```
+-Đảm bảo có các thiết bị với tên như sau (thứ tự có thể thay đổi): **MY_IP** (tên IP tự thiết kế), **dma-controller** (DMA AXI), ddr_high (vùng DMA dùng chung với PS)
+
+👉 Nếu không thấy hoặc tên sai, cần kiểm tra lại Device Tree và file .dtbo trong quá trình build PetaLinux.
 
 Sau khi đã chuẩn bị đầy đủ hệ điều hành Linux trên FPGA, chúng ta tiến hành chạy chương trình nhúng điều khiển IP tự thiết kế bằng ngôn ngữ **C/C++**.
 
