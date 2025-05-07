@@ -208,7 +208,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 
 💡 Cách tiếp cận này cho phép hệ thống xử lý ma trận cực lớn mà không vượt giới hạn tài nguyên FPGA nội bộ. Đây là kỹ thuật thường gặp trong các hệ thống tăng tốc AI hoặc DSP quy mô lớn.
 
-### B. Bước 3: Mô tả thiết kế phần cứng và mô phỏng chức năng
+### C. Bước 3: Mô tả thiết kế phần cứng và mô phỏng chức năng
 
 - Viết mã **Verilog HDL** mô tả mạch số thực hiện phép nhân ma trận A và vector X với các giá trị trong ma trận và vector sử dụng **dữ liệu 16-bit có dấu**.
 
@@ -235,7 +235,9 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   <img src="Hinh/Hinh_4.png" alt="Mô phỏng trên Vivado" width="700"/>
 </p>
 
-### C. Bước 5: Đóng gói IP (Package IP) trong Vivado
+### C. Bước 4: Tích hợp Integrated Logic Analyzer (ILA) để kiểm tra lỗi khi chạy thực tế trên FPGA
+
+### D. Bước 5: Đóng gói IP (Package IP) trong Vivado
 
 Sau khi mô tả phần cứng bằng **Verilog HDL** và mô phỏng thành công, chúng ta tiến hành **đóng gói thiết kế thành một IP** để có thể tái sử dụng và tích hợp vào hệ thống SoC trong các bước tiếp theo.
 
