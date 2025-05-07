@@ -236,6 +236,56 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
 </p>
 
 ### C. Bước 4: Tích hợp Integrated Logic Analyzer (ILA) để kiểm tra lỗi khi chạy thực tế trên FPGA
+- **ILA là gì?**  
+  ILA (Integrated Logic Analyzer) là một IP lõi do Xilinx cung cấp, cho phép người dùng quan sát các tín hiệu bên trong FPGA trong thời gian thực, giống như một máy hiện sóng tích hợp trực tiếp vào chip.
+
+- **Tại sao cần ILA?**  
+  Khi chạy thiết kế trên FPGA thực tế, có những lỗi không thể phát hiện qua mô phỏng như:
+  - DMA truyền sai địa chỉ hoặc sai chiều
+  - FSM không chuyển trạng thái đúng
+  - Dữ liệu ghi sai vào BRAM hoặc ghi chậm 1 chu kỳ
+  - Các tín hiệu bị xung glitch hoặc không đồng bộ
+  → ILA cho phép kiểm tra trực tiếp các tín hiệu bên trong mạch đang hoạt động để tìm và sửa lỗi nhanh chóng.
+
+- **Vivado hỗ trợ 2 loại ILA chính:**
+  1. **ILA (thường)**  
+     - Là IP ILA thông thường, không có chuẩn giao tiếp cố định.
+     - Được tích hợp trực tiếp bằng cách:
+       - Gọi module `ila_0` trong mã Verilog top-level (nối tín hiệu cần quan sát vào cổng `probe`)
+       - Hoặc kéo IP ILA vào Block Design và nối tín hiệu cần debug
+     - Phù hợp để quan sát FSM, các tín hiệu điều khiển, dữ liệu từ BRAM, v.v.
+     - Đơn giản, linh hoạt, dùng được với mọi thiết kế RTL.
+
+  2. **System ILA**  
+     - Là phiên bản ILA cao cấp có giao tiếp chuẩn **AXI4-Lite** hoặc **AXI4-Stream**.
+     - Được thiết kế để **gắn vào các bus AXI trong hệ thống SoC** hoặc Zynq MPSoC.
+     - Được sử dụng bằng cách kéo thả IP `System ILA` vào Block Design (không tích hợp trực tiếp trong module RTL).
+     - Hữu ích khi cần debug các bus AXI như: AXI DMA, AXI BRAM Controller, AXI Interconnect.
+     - Có thể theo dõi nhiều kênh AXI cùng lúc và hỗ trợ trigger nâng cao.
+
+- **Cách sử dụng ILA trong Vivado:**
+  - Mở Block Design hoặc mã Verilog top-level
+  - Kéo IP `ILA` hoặc `System ILA` từ IP Catalog
+  - Kết nối các tín hiệu cần debug vào cổng `probe` (ILA) hoặc interface AXI (System ILA)
+  - Set các cổng cần debug bằng cách:
+    - Trong Block Design: chọn tín hiệu → chuột phải → **Set as Debug**
+    - Trong Verilog: khai báo `ila_0` và nối vào tín hiệu cần quan sát
+  - Chạy **Synthesis**, **Implementation** và **Generate Bitstream**
+  - Mở **Vivado Hardware Manager**, kết nối tới FPGA, nạp `.bit` và bắt đầu quan sát tín hiệu
+
+- **Lưu ý khi dùng ILA:**
+  - Đặt trigger condition để chỉ ghi lại tín hiệu khi cần (ví dụ khi `Start = 1`)
+  - Không nên debug quá nhiều tín hiệu để tránh vượt giới hạn tài nguyên LUT/FF
+  - Có thể dùng nhiều probe để theo dõi song song nhiều tín hiệu
+
+- **Ví dụ sử dụng:**
+  - Dùng ILA để kiểm tra xem FSM có chuyển trạng thái đúng không
+  - Dùng System ILA để kiểm tra xem DMA có đọc/ghi đúng địa chỉ, đúng burst length không
+  - Dùng ILA để quan sát `Valid_out`, `Y_out` có xuất hiện đúng lúc không
+
+<p align="center">
+  <img src="Hinh/ILA.png" alt="ILA" width="40"/>
+</p>
 
 ### D. Bước 5: Đóng gói IP (Package IP) trong Vivado
 
