@@ -248,7 +248,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
   → ILA cho phép kiểm tra trực tiếp các tín hiệu bên trong mạch đang hoạt động để tìm và sửa lỗi nhanh chóng.
 
 - **Vivado hỗ trợ 2 loại ILA chính:**
-  1. **ILA (thường)**  
+  - **ILA (thường)**  
      - Là IP ILA thông thường, không có chuẩn giao tiếp cố định.
      - Được tích hợp trực tiếp bằng cách:
        - Gọi module `ila_0` trong mã Verilog top-level (nối tín hiệu cần quan sát vào cổng `probe`)
@@ -256,7 +256,7 @@ Giải pháp: Truyền DMA từng phần (batch-wise DMA transfer)
      - Phù hợp để quan sát FSM, các tín hiệu điều khiển, dữ liệu từ BRAM, v.v.
      - Đơn giản, linh hoạt, dùng được với mọi thiết kế RTL.
 
-  2. **System ILA**  
+  - **System ILA**  
      - Là phiên bản ILA cao cấp có giao tiếp chuẩn **AXI4-Lite** hoặc **AXI4-Stream**.
      - Được thiết kế để **gắn vào các bus AXI trong hệ thống SoC** hoặc Zynq MPSoC.
      - Được sử dụng bằng cách kéo thả IP `System ILA` vào Block Design (không tích hợp trực tiếp trong module RTL).
