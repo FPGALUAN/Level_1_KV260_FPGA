@@ -73,8 +73,8 @@ Hình trên mô tả truyền dữ liệu từ DRAM đến IP thiết kế thôn
 Bộ nhớ Block RAM (BRAM) là một thành phần quan trọng trong FPGA, cung cấp khả năng lưu trữ dữ liệu trực tiếp trên chip với độ trễ thấp và băng thông cao. BRAM có kích thước lớn hơn so với LUTRAM (RAM tạo thành từ các LUT), vì vậy nó thường được sử dụng để lưu trữ các khối dữ liệu lớn hơn, hỗ trợ các ứng dụng đòi hỏi dung lượng bộ nhớ cao hơn. Được cấu trúc dưới dạng các khối bộ nhớ riêng biệt và độc lập, BRAM cho phép thiết kế linh hoạt trong việc lưu trữ và truy xuất dữ liệu, đặc biệt hữu ích cho các ứng dụng cần tốc độ xử lý cao như xử lý tín hiệu số, điều khiển hệ thống, và xử lý dữ liệu trong các hệ thống SoC. Trong thiết kế IP, BRAM thường được sử dụng như bộ nhớ toàn cục (global memory) để lưu trữ các dữ liệu lớn cần được truy cập bởi nhiều thành phần xử lý khác nhau, hoặc như bộ nhớ cục bộ (local memory) để lưu trữ dữ liệu tạm thời và trạng thái trong các lõi xử lý cụ thể. Sự đa dụng này giúp BRAM trở thành một lựa chọn phổ biến trong các thiết kế FPGA phức tạp.
 
 <div style="text-align: center;">
-  <img src="Hinh/Vi_tri_BRAM.png" alt="Hinh_3" width="400" style="display: inline-block; margin-right: 20px;">
-  <img src="Hinh/BRAM.png" alt="Hinh_3.2" width="400" style="display: inline-block;">
+  <img src="Hinh/Vi_tri_BRAM.png" alt="Hinh_3" width="300" style="display: inline-block; margin-right: 20px;">
+  <img src="Hinh/BRAM.png" alt="Hinh_3.2" width="300" style="display: inline-block;">
 </div>
 
 
