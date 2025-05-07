@@ -541,12 +541,14 @@ Trong repo GitHub này, thư mục `Embedded_C_Code` chứa toàn bộ mã ngu�
 #### Cách chạy
 
 1. Mở phần mềm **WinSCP** để kết nối từ máy tính cá nhân đến board **KV260 FPGA** (qua SSH).
-2. **Copy toàn bộ thư mục `Embedded_C_Code`** từ repo này vào thư mục `/home/debian/` trên KV260.
+2. **Copy toàn bộ thư mục `Embedded_Software`** từ repo này vào thư mục `/home/debian/` trên KV260.
 3. Trên terminal (hoặc qua MobaXterm), truy cập vào thư mục đã copy:
    ```bash
    ssh debiang@<địa chỉ IP của KV260 FPGA> (Ví dụ 192.168.1.10)
-   cd Embedded_C_Code
-   sh run.sh
+   cd Embedded_Software
+   sh Clear_txt_file.sh -> để xóa các file txt
+   run_Matrix_Multiplication.sh -> để chạy nhân ma trận trên CPU bằng code C và tạo ra các file txt
+   run_main.sh -> để chạy code C điều khiển FPGA và so sánh kết quả từ FPGA và code C
    ```
 ---
 
