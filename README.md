@@ -144,12 +144,28 @@ Lý do sử dụng ngôn ngữ bậc cao:
 
 ### B. Bước 2: Xác định yêu cầu và đặc tả hệ thống (vẽ sơ đồ khối)
 
-- Hàm cần hiện thực: **Y = A × X + B**, dùng chuẩn số **fixed point Q15.16** ( 1 bit dấu, 15 bit số nguyên, 16 bit thập phân).
-- Xây dựng sơ đồ khối gồm các khối nhân, cộng, thanh ghi và điều khiển bởi **FSM (Finite State Machine)**.
-- FSM gồm 3 trạng thái: `IDLE`, `EXECUTE`, `WAIT_DONE`, điều khiển thông qua tín hiệu `Start_in` và `Done_in`.
+Ở Level 1, hệ thống được mở rộng để xử lý **ma trận kích thước lớn** và truyền dữ liệu thông qua **DMA**, đồng thời thực hiện tính toán song song nhiều phần tử mỗi chu kỳ bằng **khối nhân–cộng song song (PMAU)**.
 
-📌 Tín hiệu chính:  
-`A_in`, `X_in`, `B_in` (đầu vào), `Y_out`, `Valid_out` (đầu ra), `Start_in`, `Done_in` (điều khiển)
+Sơ đồ khối tổng thể gồm các thành phần:
+
+- **Máy trạng thái (FSM)**: điều khiển luồng dữ liệu qua các trạng thái:  
+  `IDLE` → `LOAD` → `EXECUTE` → `DONE`
+
+- **BRAM lưu trữ**:
+  - `Cụm 8 BRAM` cho **ma trận A**
+  - `Cụm 8 BRAM` cho **vector X**
+  - `Cụm 8 BRAM` cho **vector Y**
+
+- **Khối xử lý nhân cộng song song (PMAU)**:
+  - Gồm nhiều bộ nhân `×` kết hợp bộ cộng `+` theo dạng cây (reduction tree)
+  - Dữ liệu đầu vào từ BRAM A và X
+  - Kết quả đầu ra ghi vào BRAM Y theo từng dòng
+
+- **Ghi chú từ sơ đồ chi tiết**:
+    - Mỗi BRAM có độ rộng 16-bit và chiều sâu 2^11 ( 8 BRAM lưu trữ 2^14 giá trị 16-bit).
+    - Dữ liệu được truyền từ **DDR → BRAM** thông qua **AXI DMA**, sau đó đưa vào khối xử lý.
+    - PMAU có cấu trúc **song song 8 nhân**, mỗi nhân thực hiện phép nhân `A[i][j] × X[j]`, sau đó cộng dồn theo dạng cây nhị phân.
+    - Kết quả dòng `Y[i]` được ghi trở lại BRAM vector Y.
 
 <div style="text-align: center;">
   <img src="Hinh/Hinh_3.png" alt="Hinh_3" width="400" style="display: inline-block; margin-right: 20px;">
