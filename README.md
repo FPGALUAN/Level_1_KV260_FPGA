@@ -514,7 +514,7 @@ Sau khi build project thành công, gõ lệnh này để đóng gói file khở
 petalinux-package --boot --force --u-boot
 ```
 
-Sau đó cắm SD card vào PC, tiến hàn phân vùng và định dạng thẻ nhớ SD. **Bạn có thể làm theo hướng dẫn chi tiết trong Video hướng dẫn bên trên ** từ phút **53:40 đến 1:03:18** tại link bên dưới:
+Sau đó cắm SD card vào PC, tiến hàn phân vùng và định dạng thẻ nhớ SD. **Bạn có thể làm theo hướng dẫn chi tiết trong Video hướng dẫn bên trên ** từ phút **53:40 đến 1:03:18** tại link (https://youtu.be/F1vxzkd7_DI?si=RyHPx3zzii_RXPgk):
 
 📥 [Tải file Debian rootfs tại đây](https://drive.google.com/file/d/1ZcJYuVHpn8ER11nLCjwCUjfc5ykqP0tM/view?usp=sharing)
 
