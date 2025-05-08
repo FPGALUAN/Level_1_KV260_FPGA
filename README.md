@@ -536,7 +536,7 @@ Trước khi chạy chương trình, cần đảm bảo các thiết bị UIO (U
 Sau khi đã chuẩn bị đầy đủ hệ điều hành Linux trên FPGA, chúng ta tiến hành chạy chương trình nhúng điều khiển IP tự thiết kế bằng ngôn ngữ **C/C++**.
 
 #### Thư mục code
-Trong repo GitHub này, thư mục `Embedded_C_Code` chứa toàn bộ mã nguồn C điều khiển IP MAC thông qua giao tiếp PIO.
+Trong repo GitHub này, thư mục `Embedded_Software` chứa toàn bộ mã nguồn C điều khiển IP MAC thông qua giao tiếp PIO.
 
 #### Cách chạy
 
